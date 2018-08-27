@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+	"type": "shell",	
+	"echoCommand": false,
+    "cwd": "${workspaceFolder}",
+    "presentation": {
+        "echo": false,
+        "showReuseMessage": false
+    },
+    "tasks": [
+        {
+            "label": "dep-ensure",
+            "command": "dep ensure",
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "Build",
+            "command": "go build -o bin/${workspaceFolderBasename}",
+            "problemMatcher": "$go",
+            "dependsOn": [
+                "dep-ensure"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            // "options": {
+            //     "env": {
+            //         "GOOS": "darwin",
+            //         "GOARCH": "amd64"
+            //     }
+            // }
+        },
+        {
+            "label": "Clean",
+            "command": "rm -rf bin/",
+            "windows": {
+                "command": "rd /s /q bin"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            }
+        }
+    ]
+}

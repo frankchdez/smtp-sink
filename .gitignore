@@ -1,3 +1,8 @@
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+
+# Created by https://www.gitignore.io/api/go,visualstudiocode
+
+### Go ###
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -10,3 +15,20 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+### Go Patch ###
+/vendor/
+/Godeps/
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
+# End of https://www.gitignore.io/api/go,visualstudiocode
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+/bin/
